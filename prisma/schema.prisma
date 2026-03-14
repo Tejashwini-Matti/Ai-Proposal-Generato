@@ -1,0 +1,21 @@
+// Prisma schema for AI Proposal Generator Platform
+
+generator client {
+  provider = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Proposal {
+  id            Int      @id @default(autoincrement())
+  industry      String
+  revenue       String
+  pain_points   String
+  proposal_text String
+  version       Int
+  createdAt     DateTime @default(now())
+}
