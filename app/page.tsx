@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Link from "next/link";
 
 export default function Home() {
@@ -13,18 +11,12 @@ export default function Home() {
 
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
-          <Image src="/next.svg" alt="Logo" width={88} height={18} priority />
-          <div className="text-sm font-semibold tracking-tight">AI Proposal Generator</div>
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-900 text-sm font-semibold text-white">
+            AP
+          </div>
+          <div className="text-sm font-semibold tracking-tight">AI Proposal Studio</div>
         </div>
         <div className="flex items-center gap-3">
-          <a
-            href="https://ai.google.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden text-sm font-medium text-zinc-600 hover:text-zinc-900 sm:inline"
-          >
-            Gemini Docs
-          </a>
           <Link
             href="/dashboard"
             className="inline-flex h-10 items-center justify-center rounded-full bg-zinc-900 px-4 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800"
@@ -38,7 +30,7 @@ export default function Home() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <section>
             <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/60 px-3 py-1 text-xs font-medium text-zinc-700 shadow-sm">
-              Built for quick client-ready proposals
+              A clean workspace for proposal writing
             </div>
 
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
@@ -46,8 +38,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-4 max-w-xl text-base leading-7 text-zinc-600">
-              Enter client details, generate an AI draft, then refine, version, and export as a PDF.
-              A clean workflow designed for speed and consistency.
+              Enter client details, generate a draft, then refine, version, and export as a PDF.
+              A simple workflow designed for speed and consistency.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -124,8 +116,8 @@ export default function Home() {
 
         <footer className="mt-14 border-t border-zinc-200 pt-8 text-sm text-zinc-500">
           <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-            <div>AI Proposal Generator Platform</div>
-            <div className="text-zinc-500">Powered by Gemini</div>
+            <div>AI Proposal Studio</div>
+            <div className="text-zinc-500">Built for fast client-ready drafts</div>
           </div>
         </footer>
       </main>

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Proposal Generator Platform",
-  description: "Generate professional AI-based business proposals for sales teams.",
+  title: "AI Proposal Studio",
+  description: "Create polished, client-ready proposals in minutes.",
 };
 
 export default function RootLayout({

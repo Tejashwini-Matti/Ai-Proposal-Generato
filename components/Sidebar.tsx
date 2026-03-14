@@ -13,8 +13,8 @@ export default function Sidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-zinc-200/70 bg-white/80 text-zinc-900 backdrop-blur md:flex">
       <div className="px-5 pb-4 pt-6">
-        <div className="text-sm font-semibold tracking-tight">AI Proposal Generator</div>
-        <div className="mt-1 text-xs text-zinc-500">Proposal workspace</div>
+        <div className="text-sm font-semibold tracking-tight">AI Proposal Studio</div>
+        <div className="mt-1 text-xs text-zinc-500">Workspace</div>
       </div>
 
       <nav className="grid gap-1 px-3">
@@ -42,14 +42,6 @@ export default function Sidebar() {
           Proposal History
         </Link>
       </nav>
-
-      <div className="mt-auto px-5 pb-6 pt-6 text-xs text-zinc-500">
-        <div className="rounded-xl border border-zinc-200 bg-white px-3 py-2">
-          <div className="font-semibold text-zinc-700">Environment</div>
-          <div className="mt-1 font-mono">DATABASE_URL</div>
-          <div className="font-mono">GEMINI_API_KEY</div>
-        </div>
-      </div>
     </aside>
   );
 }
