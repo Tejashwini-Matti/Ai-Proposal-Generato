@@ -116,17 +116,24 @@ export default function DashboardPage() {
 
   return (
     <Layout>
-      <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
-        <p className="mt-1 text-sm text-gray-600">
-          Generate, edit, save, and export AI-powered proposals.
-        </p>
+      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+            Generate proposal
+          </h1>
+          <p className="mt-1 text-sm text-zinc-600">
+            Create a client-ready proposal, then save versions and export to PDF.
+          </p>
+        </div>
+        <div className="text-xs font-medium text-zinc-500">
+          Draft title: <span className="font-mono">{proposalTitle}</span>
+        </div>
       </div>
 
       {errorMessage ? (
-        <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-900">
+        <div className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-900 shadow-sm">
           <div className="font-semibold">Request failed</div>
-          <div className="mt-1 break-words">{errorMessage}</div>
+          <div className="mt-1 break-words text-red-800/90">{errorMessage}</div>
         </div>
       ) : null}
 

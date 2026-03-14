@@ -37,27 +37,32 @@ export default function HistoryPage() {
 
   return (
     <Layout>
-      <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-gray-900">Proposal History</h1>
-        <p className="mt-1 text-sm text-gray-600">
-          View all saved proposals generated from the dashboard.
-        </p>
+      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+            Proposal history
+          </h1>
+          <p className="mt-1 text-sm text-zinc-600">
+            View all saved proposals generated from the dashboard.
+          </p>
+        </div>
+        <div className="text-xs font-medium text-zinc-500">Total saved: {items.length}</div>
       </div>
 
       {errorMessage ? (
-        <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-900">
+        <div className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-900 shadow-sm">
           <div className="font-semibold">Failed to load history</div>
-          <div className="mt-1 break-words">{errorMessage}</div>
+          <div className="mt-1 break-words text-red-800/90">{errorMessage}</div>
         </div>
       ) : null}
 
       {loading ? (
-        <div className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm text-gray-700 shadow-md">
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-gray-400/60 border-t-gray-700" />
+        <div className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-zinc-700 shadow-sm">
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-zinc-400/60 border-t-zinc-700" />
           Loading proposals...
         </div>
       ) : items.length === 0 ? (
-        <div className="rounded-lg bg-white p-6 text-sm text-gray-700 shadow-md">
+        <div className="rounded-xl bg-white p-6 text-sm text-zinc-700 shadow-sm">
           No proposals saved yet.
         </div>
       ) : (
