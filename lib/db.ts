@@ -1,12 +1,15 @@
-import { PrismaClient } from "@prisma/client";
+import { Pool } from "pg";
 
-// Prevent exhausting your database connection limit during development by reusing a single PrismaClient.
-const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
+const globalForPg = globalThis as unknown as { pgPool?: Pool };
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log: ["error"],
+export const db =
+  globalForPg.pgPool ??
+  new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl:
+      process.env.NODE_ENV === "production"
+        ? { rejectUnauthorized: false }
+        : undefined,
   });
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+if (process.env.NODE_ENV !== "production") globalForPg.pgPool = db;
